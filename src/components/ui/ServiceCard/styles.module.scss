@@ -1,0 +1,36 @@
+.itemContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(to bottom right, hsl(0, 0%, 25%) 0%, hsla(0, 0%, 25%, 0) 50%);
+    box-shadow: 0 16px 30px hsla(0, 0%, 0%, 0.125);
+    border-radius: 14px;
+    padding: 10px;
+    z-index: 1;
+    position: relative;
+    min-height: 250px;
+    width: 100%;
+    overflow: hidden;
+
+
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 1px;
+        background: linear-gradient(to bottom right, hsla(240, 1%, 18%, 0.251) 0%, hsla(240, 2%, 11%, 0) 100%), hsl(240, 2%, 13%);
+        border-radius: inherit;
+        z-index: -1;
+        width: 100%;
+    }
+
+    h4 {
+        text-transform: capitalize;
+    }
+
+    p {
+        text-align: center;
+        overflow: hidden;
+    }
+}

@@ -1,0 +1,52 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    gap: 10px;
+    background: linear-gradient(to bottom right, hsl(0, 0%, 25%) 0%, hsla(0, 0%, 25%, 0) 50%);
+    box-shadow: 0 16px 30px hsla(0, 0%, 0%, 0.125);
+    border-radius: 14px;
+    padding: 20px;
+    z-index: 1;
+    position: relative;
+    height: 200px;
+    width: 100%;
+
+
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 1px;
+        background: linear-gradient(to bottom right, hsla(240, 1%, 18%, 0.251) 0%, hsla(240, 2%, 11%, 0) 100%), hsl(240, 2%, 13%);
+        border-radius: inherit;
+        z-index: -1;
+    }
+
+    .avatarContainer {
+        width: 80px;
+        height: 80px;
+        position: absolute;
+        top: -35px;
+        left: 20px;
+        background-color: var(--thirdground);
+        border-radius: 14px;
+
+        img {
+            object-fit: cover;
+            object-position: center;
+            width: inherit;
+            height: inherit;
+        }
+    }
+
+    p {
+        display: -webkit-box;
+        line-clamp: 3;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+    }
+}

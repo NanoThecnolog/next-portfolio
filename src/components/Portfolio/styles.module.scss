@@ -1,0 +1,52 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    padding: 20px;
+
+    //width: 100%;
+    .filterContainer {
+        display: flex;
+        gap: 20px;
+
+        .filterItem {
+            list-style: none;
+            cursor: pointer;
+            transition: .4s;
+
+            &:hover {
+                color: var(--gray);
+            }
+        }
+
+        .active {
+            color: var(--gold);
+            font-weight: 700;
+            cursor: default;
+        }
+    }
+
+    .projectsContainer {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        //width: 100%;
+    }
+}
+
+@media(min-width: 745px) and (max-width: 929px) {
+    .container {
+        .projectsContainer {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+}
+
+@media(max-width: 744px) {
+    .container {
+
+        .projectsContainer {
+            grid-template-columns: 1fr;
+        }
+    }
+}

@@ -1,0 +1,43 @@
+.item {
+    display: flex;
+    gap: 40px;
+
+    .localContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .pin {
+            border-radius: 50%;
+            width: 15px;
+            height: 15px;
+            background-color: var(--thirdground);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .core {
+                border-radius: 50%;
+                width: 5px;
+                height: 5px;
+                background-color: var(--gold);
+                box-shadow: 0 0 3px 1.5px var(--gold);
+            }
+        }
+    }
+
+    .infoContainer {
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+
+        h5 {
+            font-weight: 500;
+            color: var(--gold);
+        }
+
+        p {
+            font-weight: 300;
+        }
+    }
+}

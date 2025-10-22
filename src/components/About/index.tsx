@@ -7,8 +7,6 @@ import ServiceCard from '../ui/ServiceCard'
 import Testimonial from '../ui/Testimonials'
 import Clients from '../ui/Clients'
 //import 'swiper/css'
-import { SwiperSlide, Swiper } from 'swiper/react'
-import { useRef, useState } from 'react'
 
 export default function About() {
 
@@ -87,7 +85,7 @@ export default function About() {
                 <h3>Depoimentos</h3>
                 <div className={styles.testimonials}>
                     {testimonials.map((test, index) => (
-                        <div key={test.id} className={styles.testimonial}>
+                        <div key={test.id + index} className={styles.testimonial}>
                             <Testimonial content={test} />
                         </div>
                     ))}

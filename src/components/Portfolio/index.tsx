@@ -4,12 +4,6 @@ import Project from '../ui/Projects'
 
 
 export default function Portfolio() {
-
-    function filter() {
-
-    }
-
-
     return (
         <div className={styles.container}>
             <div>

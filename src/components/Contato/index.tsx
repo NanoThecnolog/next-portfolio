@@ -3,7 +3,7 @@ import styles from './styles.module.scss'
 export default function Contact() {
     return (
         <>
-            <p>Componente contato</p>
+            <p className={styles.container}>Componente contato</p>
         </>
     )
 }

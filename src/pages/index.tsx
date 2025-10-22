@@ -1,39 +1,16 @@
 import Head from "next/head";
-import Image from "next/image";
-import localFont from "next/font/local";
 import styles from "@/styles/Home.module.scss";
 import About from "@/components/About";
 import Resume from "@/components/Resume";
 import Portfolio from "@/components/Portfolio";
-import Contact from "@/components/Contato";
 import { useState } from "react";
 import Aside from "@/components/Aside";
 import Menu from "@/components/Menu";
+import { data } from "@/common/vars/data";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
 
 export default function Home() {
-  const data = {
-    name: "Ericsson Gomes",
-    title: "Web Developer",
-    email: "contato@ericssongomes.com",
-    tel: "+55 (21) 96629-6556",
-    birthday: "3 de Maio, 1994",
-    local: "Rio de Janeiro, Brasil",
-    linkedin: "https://linkedin.com/in/ericssongomes/",
-    instagram: "https://instagram.com/ericsson.costagomes/",
-    github: "https://github.com/NanoThecnolog",
-    avatar: "/my-avatar.png"
-  }
+
 
   const [activeSection, setActiveSection] = useState("about")
 
@@ -61,7 +38,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div
-        className={`${styles.page} ${geistSans.variable} ${geistMono.variable}`}
+        className={`${styles.page}`}
       >
         <main className={styles.main}>
           <Aside data={data} />

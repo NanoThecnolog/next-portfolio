@@ -3,7 +3,7 @@ export const projects = [
         image: '/Projeto Clima.png',
         name: 'Wheather',
         link: 'https://weather-kappa-black.vercel.app/',
-        tags: ['javascript', 'css', 'html']
+        tags: ['javascript', 'css', 'html', 'restapi']
     },
     {
         image: '/Projeto Finans alta.png',
@@ -32,7 +32,7 @@ export const projects = [
     {
         image: '/flixnext.png',
         name: 'Streaming FlixNext',
-        link: 'https://flixnext.vercel.app/',
+        link: 'https://flixnext.com.br/',
         tags: ['nextjs', 'express', 'typescript', 'postgreSQL']
     },
     {

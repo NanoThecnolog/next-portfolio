@@ -1,37 +1,90 @@
 .container {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    //background-color: red;
+    gap: 0;
+    background: var(--surface);
+    border: 1px solid var(--stroke);
+    border-radius: var(--radius-card);
+    overflow: hidden;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 
-
-    .imageContainer {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        overflow: hidden;
-        border-radius: 1rem;
-        width: 100%;
-        cursor: pointer;
+    &:hover {
+        transform: translateY(-5px);
+        border-color: rgba(45, 212, 191, 0.4);
+        box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45);
 
         img {
-            border-radius: 1rem;
+            transform: scale(1.06);
+        }
+
+        .overlay {
+            opacity: 1;
+        }
+    }
+
+    .imageContainer {
+        position: relative;
+        aspect-ratio: 16 / 10;
+        overflow: hidden;
+
+        img {
             width: 100%;
-            height: 200px;
+            height: 100%;
             object-fit: cover;
             object-position: center;
-            transition: .4s;
+            transition: transform 0.45s ease;
+        }
 
-            &:hover {
-                transform: scale(1.1);
+        .overlay {
+            position: absolute;
+            inset: 0;
+            display: grid;
+            place-items: center;
+            background: linear-gradient(to top, rgba(11, 11, 13, 0.85), rgba(11, 11, 13, 0.35));
+            opacity: 0;
+            transition: opacity 0.35s ease;
+
+            span {
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+                padding: 10px 20px;
+                border-radius: 999px;
+                background-color: rgba(45, 212, 191, 0.92);
+                color: #1a1a1a;
+                font-size: 0.82rem;
+                font-weight: 600;
             }
         }
     }
 
-    p {
-        font-weight: 300;
-        text-transform: uppercase;
+    .info {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 16px;
+
+        h5 {
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+
+            span {
+                font-size: 0.66rem;
+                font-weight: 500;
+                text-transform: uppercase;
+                letter-spacing: 0.06em;
+                color: var(--gray);
+                padding: 4px 10px;
+                border-radius: 999px;
+                border: 1px solid var(--stroke);
+                background-color: rgba(255, 255, 255, 0.04);
+            }
+        }
     }
-
-
 }

@@ -1,107 +1,18 @@
 .page {
-  --gray-rgb: 0, 0, 0;
-  --gray-alpha-200: rgba(var(--gray-rgb), 0.08);
-  --gray-alpha-100: rgba(var(--gray-rgb), 0.05);
-
-  --button-primary-hover: #383838;
-  --button-secondary-hover: #f2f2f2;
-
-  display: grid;
-  grid-template-rows: 20px 1fr 20px;
-  align-items: center;
-  justify-items: center;
-  min-height: 100vh;
-  padding: 20px;
-  gap: 64px;
-}
-
-@media (prefers-color-scheme: dark) {
-  .page {
-    --gray-rgb: 255, 255, 255;
-    --gray-alpha-200: rgba(var(--gray-rgb), 0.145);
-    --gray-alpha-100: rgba(var(--gray-rgb), 0.06);
-
-    --button-primary-hover: #ccc;
-    --button-secondary-hover: #1a1a1a;
-  }
-}
-
-.main {
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 32px;
-  grid-row-start: 2;
-  //min-width: 259px;
-  width: 100%;
-  position: relative;
-  //background-color: red;
-  margin: 0 auto;
+  flex-direction: column;
+  min-height: 100vh;
+  padding-top: 72px;
 
-  .article {
-    max-width: 75%;
-    background-color: var(--secundaryground);
-    border-radius: 1rem;
-    border: 1px solid var(--thirdground);
+  main {
+    flex: 1;
 
-    section {
-      width: 100%;
+    > * + * {
+      border-top: 1px solid var(--stroke);
     }
-  }
-}
 
-@media (max-width: 1250px) {
-  .main {
-    flex-direction: column;
-    margin: 0 auto;
-
-    .article {
-      max-width: 100%;
-    }
-  }
-}
-
-@media(min-width: 930px) and (max-width: 1249px) {
-  .main {
-
-    .article {
-      min-width: 100%;
-    }
-  }
-}
-
-@media(min-width: 750px) and (max-width: 929px) {
-  .main {
-    align-items: center;
-
-    .article {
-      min-width: 100%;
-    }
-  }
-}
-
-@media(max-width: 744px) {
-  .page {
-    padding: 0;
-    width: 100vw;
-    //background-color: blue;
-
-
-
-    .main {
-      max-width: none;
-      min-width: none;
-      overflow: hidden;
-
-      width: 100%;
-
-      align-items: center;
-
-      .article {
-        max-width: none;
-        min-width: none;
-        width: 80%;
-      }
+    > *:nth-of-type(even) {
+      background-color: rgba(255, 255, 255, 0.015);
     }
   }
 }

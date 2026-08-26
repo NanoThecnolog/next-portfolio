@@ -1,20 +1,30 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 :root {
-  --background: #ffffff;
-  --secundaryground: #181818;
-  --thirdground: #3a3a3a;
-  --foreground: #171717;
-  --gray: #8f8f8f;
-  --gold: #ffdb70;
+  --background: #0b0d10;
+  --secundaryground: #14171b;
+  --thirdground: #22272e;
+  --foreground: #e8edf2;
+  --gray: #97a1ac;
+  --accent: #2dd4bf;
+  --accent-light: #5eead4;
+  --accent-deep: #38bdf8;
+  --accent-soft: rgba(45, 212, 191, 0.12);
+  --stroke: rgba(148, 197, 214, 0.12);
+  --surface: linear-gradient(160deg, #1d232a 0%, #15181d 100%);
+  --shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+  --radius-panel: 24px;
+  --radius-card: 16px;
   --ff-poppins: 'Poppins', sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  color-scheme: dark;
+  scroll-behavior: smooth;
+}
+
+section[id] {
+  scroll-margin-top: 72px;
 }
 
 html,
@@ -25,25 +35,24 @@ body {
 
 body {
   color: var(--foreground);
-  background: var(--background);
-  font-family: "Poppins", sans-serif;
+  background:
+    radial-gradient(60rem 30rem at 85% -10%, rgba(45, 212, 191, 0.07), transparent 60%),
+    radial-gradient(50rem 28rem at -10% 110%, rgba(56, 189, 248, 0.05), transparent 60%),
+    var(--background);
+  font-family: var(--ff-poppins);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
 }
 
 ::selection {
-  background-color: var(--gold);
-  color: var(--secundaryground);
+  background-color: var(--accent);
+  color: #06231f;
 }
-
 
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-
-
 }
 
 a {
@@ -51,8 +60,39 @@ a {
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+button {
+  background: none;
+  border: 0;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--secundaryground);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--thirdground);
+  border-radius: 999px;
+
+  &:hover {
+    background: #333c46;
   }
 }

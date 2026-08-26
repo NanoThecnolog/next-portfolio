@@ -1,16 +1,29 @@
 .item {
+    position: relative;
     display: flex;
-    gap: 40px;
+    gap: 20px;
+    padding-bottom: 4px;
+
+    &:not(:last-child)::after {
+        content: "";
+        position: absolute;
+        left: 9px;
+        top: 24px;
+        bottom: -6px;
+        width: 2px;
+        background: var(--thirdground);
+    }
 
     .localContainer {
         display: flex;
         justify-content: center;
-        align-items: center;
+        align-items: flex-start;
+        padding-top: 8px;
 
         .pin {
             border-radius: 50%;
-            width: 15px;
-            height: 15px;
+            width: 18px;
+            height: 18px;
             background-color: var(--thirdground);
             display: flex;
             justify-content: center;
@@ -18,10 +31,10 @@
 
             .core {
                 border-radius: 50%;
-                width: 5px;
-                height: 5px;
-                background-color: var(--gold);
-                box-shadow: 0 0 3px 1.5px var(--gold);
+                width: 6px;
+                height: 6px;
+                background-color: var(--accent);
+                box-shadow: 0 0 6px 2px rgba(45, 212, 191, 0.55);
             }
         }
     }
@@ -29,15 +42,28 @@
     .infoContainer {
         display: flex;
         flex-direction: column;
-        gap: 7px;
+        gap: 10px;
+
+        h4 {
+            font-weight: 600;
+            font-size: 0.98rem;
+        }
 
         h5 {
+            align-self: flex-start;
             font-weight: 500;
-            color: var(--gold);
+            font-size: 0.75rem;
+            color: var(--accent);
+            background-color: var(--accent-soft);
+            padding: 3px 12px;
+            border-radius: 999px;
         }
 
         p {
             font-weight: 300;
+            font-size: 0.88rem;
+            line-height: 1.7;
+            color: var(--gray);
         }
     }
 }

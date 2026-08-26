@@ -11,7 +11,7 @@ interface ServiceProps {
 export default function ServiceCard({ card }: ServiceProps) {
     return (
         <div className={styles.itemContainer}>
-            <div>{card.icon}</div>
+            <div className={styles.iconBox}>{card.icon}</div>
             <h4>{card.title}</h4>
             <p>{card.description}</p>
         </div>

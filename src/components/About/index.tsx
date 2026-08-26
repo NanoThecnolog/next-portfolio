@@ -1,104 +1,54 @@
-import { MdWeb } from 'react-icons/md'
+import { CiMobile3 } from 'react-icons/ci'
+import { FaCalendarAlt } from 'react-icons/fa'
+import { FiMapPin } from 'react-icons/fi'
+import { MdOutlineMailOutline } from 'react-icons/md'
 import styles from './styles.module.scss'
-import { FaLaptopCode } from 'react-icons/fa6'
-import { ImMobile } from 'react-icons/im'
-import { HiCamera } from 'react-icons/hi2'
-import ServiceCard from '../ui/ServiceCard'
-import Testimonial from '../ui/Testimonials'
-import Clients from '../ui/Clients'
-//import 'swiper/css'
 
-export default function About() {
+interface AboutProps {
+    data: {
+        email: string
+        tel: string
+        birthday: string
+        local: string
+    }
+}
 
-    const cardService = [
-        {
-            title: 'Web Design',
-            description: 'Criação de Layouts modernos e de alta qualidade para atender cada cliente de maneira única e personalizada.',
-            icon: <MdWeb size={50} color='#ffdb70' />
-        },
-        {
-            title: 'Web Developer',
-            description: 'Desenvolvimento de sites Utilizando: Javascript, ReactJS, VueJS, NextJS para o front-end, Node.jS, Typescript, PHP, PostGreSQL, e MySQL para o Back-end. Código limpo e estruturado. Buscando Responsividade, elegância, objetividade e desempenho.',
-            icon: <FaLaptopCode size={50} color='#ffdb70' />
-        },
-        {
-            title: 'MObile Apps',
-            description: 'Desenvolvimento profissional de aplicativos utilizando Java, IONIC e React Native.',
-            icon: <ImMobile size={50} color='#ffdb70' />
-        },
-        {
-            title: 'Fotografia',
-            description: 'Fotografia autoral de pessoas, animais, paisagens e locais que visito como hobbie.',
-            icon: <HiCamera size={50} color='#ffdb70' />
-        },
-    ]
+export default function About({ data }: AboutProps) {
+    const { email, tel, birthday, local } = data
 
-    const testimonials = [
-        {
-            id: 1,
-            name: 'Elizangela Mara',
-            text: 'Trabalho rápido e conciso. Ele fez o meu website do jeito que eu queria. Entregou tudo bem antes do prazo e me ajudou bastante em algumas escolhas de design. Meus clientes aumentaram bastante depois que o site ficou pronto. As pessoas me encontram com mais facilidade, e o atendimento ficou mais dinâmico. Muito bom trabalho!',
-            image: '/avatar-5.png'
-        },
-        {
-            id: 2,
-            name: 'Tania Vianna',
-            text: 'Trabalhar com Ericsson foi uma experiência inovadora na minha carreira como HeadHunter. Quando decidi ampliar minha presença online, quem melhor me atendeu foi o Ericsson, me auxiliando nas escolhas de design e aconselhando também quanto ao conteúdo do site. Melhor escolha!',
-            image: '/avatar-2.png'
-        }
-    ]
-
-    const clients = [
-        {
-            name: 'MBLifeCorretora',
-            link: 'https://mblifecorretora.com.br/',
-            image: '/logo-mblife.png'
-        },
-        {
-            name: 'Solurh',
-            link: 'https://solurh.pro/',
-            image: '/logo-Solurh.png'
-        },
-        {
-            name: 'Progeo Solutions',
-            link: 'https://progeosolutions.com/',
-            image: '/logo_pro_geo.png'
-        }
+    const facts = [
+        { icon: <MdOutlineMailOutline />, label: 'Email', value: email },
+        { icon: <CiMobile3 />, label: 'Telefone', value: tel },
+        { icon: <FaCalendarAlt />, label: 'Aniversário', value: birthday },
+        { icon: <FiMapPin />, label: 'Localização', value: local }
     ]
 
     return (
-        <div className={styles.container}>
-            <div className={styles.aboutText}>
-                <p>Sou um desenvolvedor web Full Stack do Rio de Janeiro, atualmente cursando Sistemas de Informação e em busca de novas oportunidades na área. Destaco-me pela habilidade de transformar as ideias dos clientes em websites funcionais, responsivos e visualmente atrativos.</p>
-                <p>Minha abordagem única combina conhecimento técnico, dedicação aos desafios e a capacidade de adicionar um toque pessoal a cada projeto, tornando-os experiências digitais autênticas e memoráveis.</p>
-            </div>
-            <div className={styles.whatIdo}>
-                <h3>O que faço</h3>
-                <div className={styles.items}>
-                    {cardService.map((card, index) => (
-                        <ServiceCard card={card} key={index} />
-
-                    ))}
+        <section id='sobre' className={styles.section}>
+            <div className={styles.inner}>
+                <header className={styles.header}>
+                    <span className={styles.kicker}>Quem sou</span>
+                    <h2>Sobre mim</h2>
+                </header>
+                <div className={styles.grid}>
+                    <div className={styles.text}>
+                        <p>Sou desenvolvedor web Full Stack, carioca e apaixonado por construir soluções que funcionam de verdade. Há mais de seis anos transformo ideias em sites e sistemas rápidos, seguros e com a identidade de cada marca — do primeiro rascunho até o projeto no ar.</p>
+                        <p>Como Full Stack, domino todo o ciclo do projeto: design, front-end, back-end, banco de dados, domínio, hospedagem e certificado de segurança. Na prática, isso significa comunicação direta, menos intermediários e um único ponto responsável pela qualidade da entrega e pelo cumprimento dos prazos.</p>
+                        <p>Trabalho com tecnologias modernas como React, Next.js, Vue.js, Node.js, TypeScript e PostgreSQL, sempre priorizando código limpo, performance e uma experiência impecável em qualquer dispositivo. Atualmente curso Sistemas de Informação para ir ainda mais longe em arquitetura e gestão de projetos. Meu compromisso é entregar resultado real para o seu negócio — e uma parceria que você vai querer repetir.</p>
+                    </div>
+                    <div className={styles.facts}>
+                        {facts.map((fact) => (
+                            <div key={fact.label} className={styles.fact}>
+                                <span className={styles.factIcon}>{fact.icon}</span>
+                                <div>
+                                    <h4>{fact.label}</h4>
+                                    <p>{fact.value}</p>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </div>
-            <div className={styles.testmonialsContainer}>
-                <h3>Depoimentos</h3>
-                <div className={styles.testimonials}>
-                    {testimonials.map((test, index) => (
-                        <div key={test.id + index} className={styles.testimonial}>
-                            <Testimonial content={test} />
-                        </div>
-                    ))}
-                </div>
-            </div>
-            <div className={styles.clientsContainer}>
-                <h3>clientes</h3>
-                <div className={styles.clients}>
-                    {clients.map((client, index) => (
-                        <Clients client={client} key={index} />
-                    ))}
-                </div>
-            </div>
-        </div>
+        </section>
     )
 }

@@ -60,28 +60,34 @@ export default function Resume() {
         }
     ]
     return (
-        <div className={styles.container}>
-            <div className={styles.formacao}>
-                <div className={styles.title}>
-                    <div className={styles.icon}>
-                        <IoBookOutline />
+        <section id='resumo' className={styles.section}>
+            <div className={styles.inner}>
+                <header className={styles.header}>
+                    <span className={styles.kicker}>Trajetória</span>
+                    <h2>Resumo</h2>
+                </header>
+                <div className={styles.formacao}>
+                    <div className={styles.title}>
+                        <div className={styles.icon}>
+                            <IoBookOutline />
+                        </div>
+                        <h3>Formação</h3>
                     </div>
-                    <h3>Formação</h3>
+                    <div className={styles.degrees}>
+                        {formacao.map((form, index) => (
+                            <Degrees degree={form} key={index} />
+                        ))}
+                    </div>
                 </div>
-                <div className={styles.degrees}>
-                    {formacao.map((form, index) => (
-                        <Degrees degree={form} key={index} />
-                    ))}
+                <div className={styles.skillContainer}>
+                    <h4>Skills</h4>
+                    <div className={styles.skills}>
+                        {skills.map((skill, index) => (
+                            <Skills skill={skill} key={index} />
+                        ))}
+                    </div>
                 </div>
             </div>
-            <div className={styles.skillContainer}>
-                <h4>My Skills</h4>
-                <div className={styles.skills}>
-                    {skills.map((skill, index) => (
-                        <Skills skill={skill} key={index} />
-                    ))}
-                </div>
-            </div>
-        </div>
+        </section>
     )
 }

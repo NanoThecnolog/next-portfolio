@@ -1,86 +1,112 @@
-.container {
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
-    width: 100%;
+.section {
+    padding: 96px 24px;
 
-    h3 {
-        text-transform: capitalize;
+    .inner {
+        max-width: 1200px;
+        margin: 0 auto;
     }
 
-
-    .aboutText {
-        color: #d1d1d1;
+    .header {
         display: flex;
         flex-direction: column;
-        gap: 20px;
-    }
+        gap: 8px;
+        margin-bottom: 44px;
 
-    .whatIdo {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        width: 100%;
+        .kicker {
+            font-size: 0.82rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            color: var(--accent);
+        }
 
-        .items {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            width: 100%;
-            overflow: hidden;
+        h2 {
+            font-size: clamp(1.7rem, 4vw, 2.3rem);
+            font-weight: 700;
+            letter-spacing: -0.02em;
         }
     }
 
-    .testmonialsContainer {
+    .grid {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 48px;
+        align-items: start;
+    }
+
+    .text {
         display: flex;
         flex-direction: column;
-        gap: 50px;
-        overflow: hidden;
-        position: relative;
+        gap: 18px;
 
+        p {
+            font-size: 0.97rem;
+            font-weight: 300;
+            line-height: 1.85;
+            color: #c9c9cf;
+            max-width: 65ch;
 
-        .testimonials {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 20px;
-
-
-            .testimonial {
-                flex: 1;
-                text-align: center;
+            &:first-child::first-letter {
+                color: var(--accent);
+                font-weight: 600;
             }
         }
     }
 
-    .clientsContainer {
+    .facts {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        background: var(--surface);
+        border: 1px solid var(--stroke);
+        border-radius: var(--radius-card);
+        padding: 26px;
 
-        .clients {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            justify-content: space-evenly;
+        .fact {
+            display: flex;
             align-items: center;
-            overflow: hidden;
-        }
-    }
-}
+            gap: 16px;
 
-@media(max-width: 1024px) {
-    .container {
-        .whatIdo {
-            .items {
-                grid-template-columns: 1fr;
+            & + .fact {
+                padding-top: 14px;
+                border-top: 1px solid var(--stroke);
+            }
+
+            .factIcon {
+                flex-shrink: 0;
+                display: grid;
+                place-items: center;
+                width: 42px;
+                height: 42px;
+                border-radius: 12px;
+                background-color: var(--thirdground);
+                color: var(--accent);
+                font-size: 19px;
+            }
+
+            h4 {
+                font-size: 0.68rem;
+                font-weight: 400;
+                text-transform: uppercase;
+                letter-spacing: 0.1em;
+                color: var(--gray);
+            }
+
+            p {
+                font-size: 0.9rem;
+                overflow-wrap: anywhere;
             }
         }
     }
 }
 
-@media (max-width: 590px) {
-    .container {
-        .testmonialsContainer {
-            .testimonials {
-                grid-template-columns: 1fr;
-            }
+@media (max-width: 900px) {
+    .section {
+        padding: 72px 20px;
+
+        .grid {
+            grid-template-columns: 1fr;
+            gap: 32px;
         }
     }
 }

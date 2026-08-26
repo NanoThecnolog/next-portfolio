@@ -172,6 +172,7 @@
     position: relative;
     display: flex;
     justify-content: center;
+    padding: 40px;
     animation: fadeUp 0.9s ease both;
 
     .avatarFrame {
@@ -215,33 +216,57 @@
     }
 
     .chipA {
-      top: 6%;
-      left: 2%;
+      top: 2%;
+      left: 10%;
       color: #61dafb;
       animation-delay: 0s;
     }
     .chipB {
-      top: 18%;
-      right: -2%;
+      top: 2%;
+      right: 10%;
       color: #ffffff;
-      animation-delay: 1.2s;
+      animation-delay: 0.7s;
     }
     .chipC {
-      bottom: 22%;
-      left: -4%;
+      top: 38%;
+      left: -6%;
       color: #8cc84b;
-      animation-delay: 2.4s;
+      animation-delay: 1.4s;
     }
     .chipD {
-      bottom: 6%;
-      right: 4%;
+      top: 38%;
+      right: -6%;
       color: #3178c6;
-      animation-delay: 3.6s;
+      animation-delay: 2.1s;
+    }
+    .chipE {
+      top: 68%;
+      left: -4%;
+      color: #68a063;
+      animation-delay: 2.8s;
+    }
+    .chipF {
+      top: 68%;
+      right: -4%;
+      color: #e0234e;
+      animation-delay: 3.5s;
+    }
+    .chipG {
+      bottom: 2%;
+      left: 10%;
+      color: #41b883;
+      animation-delay: 4.2s;
+    }
+    .chipH {
+      bottom: 2%;
+      right: 10%;
+      color: #336791;
+      animation-delay: 4.9s;
     }
 
     .location {
       position: absolute;
-      bottom: -14px;
+      bottom: 0;
       left: 50%;
       transform: translateX(-50%);
       white-space: nowrap;
@@ -328,8 +353,23 @@
       }
     }
 
-    .visual .chipD {
-      right: -2%;
+    .visual {
+      padding: 24px;
+
+      .chip {
+        font-size: 0.7rem;
+        padding: 6px 12px;
+      }
+
+      .chipC,
+      .chipD {
+        top: 36%;
+      }
+
+      .chipE,
+      .chipF {
+        top: 66%;
+      }
     }
   }
 }

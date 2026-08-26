@@ -17,11 +17,11 @@ interface HeroProps {
 }
 
 const chips = [
-  "React",
   "Next.js",
+  "Express",
+  "Nest.js",
   "Node.js",
   "TypeScript",
-  "Vue",
   "PostgreSQL",
 ];
 
@@ -136,6 +136,8 @@ export default function Hero({ data }: HeroProps) {
           <span className={`${styles.chip} ${styles.chipB}`}>{chips[1]}</span>
           <span className={`${styles.chip} ${styles.chipC}`}>{chips[2]}</span>
           <span className={`${styles.chip} ${styles.chipD}`}>{chips[3]}</span>
+          <span className={`${styles.chip} ${styles.chipE}`}>{chips[4]}</span>
+          <span className={`${styles.chip} ${styles.chipF}`}>{chips[5]}</span>
           <span className={styles.location}>📍 {local}</span>
         </div>
       </div>

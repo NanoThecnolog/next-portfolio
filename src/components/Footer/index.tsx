@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa'
 import styles from './styles.module.scss'
 
@@ -30,6 +31,13 @@ export default function Footer({ data }: FooterProps) {
             </div>
             <div className={styles.copy}>
                 <p>© {new Date().getFullYear()} {name}. Todos os direitos reservados.</p>
+                <Image
+                    src='/hostinger.webp'
+                    alt='Selo de parceria Hostinger'
+                    width={120}
+                    height={45}
+                    className={styles.badge}
+                />
                 <p>Feito com Next.js <span>⚡</span> Rio de Janeiro</p>
             </div>
         </footer>

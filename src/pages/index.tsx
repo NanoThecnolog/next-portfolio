@@ -16,39 +16,56 @@ import { getGithubStats } from "@/lib/github";
 import type { GithubStats } from "@/lib/github";
 
 interface PageProps {
-    github: GithubStats | null;
+  github: GithubStats | null;
 }
 
 export const getStaticProps: GetStaticProps<PageProps> = async () => {
-    const github = await getGithubStats("NanoThecnolog");
-    return {
-        props: { github },
-        revalidate: 3600,
-    };
+  const github = await getGithubStats("NanoThecnolog");
+  return {
+    props: { github },
+    revalidate: 3600,
+  };
 };
 
-export default function Home({ github }: InferGetStaticPropsType<typeof getStaticProps>) {
-    return (
-        <>
-            <Head>
-                <title>Ericsson Gomes | Desenvolvedor Web Full Stack</title>
-                <meta name="description" content="Criação de sites, hospedagem de sites e serviços, caixas de email, contratação de domínios e certificado SSL. Desenvolvedor web Full Stack no Rio de Janeiro." />
-                <meta name="viewport" content="width=device-width, initial-scale=1" />
-                <link rel="icon" href="/favicon.ico" />
-            </Head>
-            <div className={styles.page}>
-                <Header />
-                <main>
-                    <Hero data={data} />
-                    <Reveal><About data={data} /></Reveal>
-                    <Reveal><Servicos /></Reveal>
-                    <Reveal><Resume /></Reveal>
-                    <Reveal><Github stats={github} /></Reveal>
-                    <Reveal><Portfolio /></Reveal>
-                    <Reveal><Contato data={data} /></Reveal>
-                </main>
-                <Footer data={data} />
-            </div>
-        </>
-    )
+export default function Home({
+  github,
+}: InferGetStaticPropsType<typeof getStaticProps>) {
+  return (
+    <>
+      <Head>
+        <title>Ericsson Gomes | Desenvolvedor Web Full Stack</title>
+        <meta
+          name="description"
+          content="Criação de sites, hospedagem de sites e serviços, caixas de email, contratação de domínios e certificado SSL. Desenvolvedor web Full Stack no Rio de Janeiro."
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <div className={styles.page}>
+        <Header />
+        <main>
+          <Hero data={data} />
+          <Reveal>
+            <About data={data} />
+          </Reveal>
+          <Reveal>
+            <Servicos />
+          </Reveal>
+          <Reveal>
+            <Github stats={github} />
+          </Reveal>
+          <Reveal>
+            <Resume />
+          </Reveal>
+          <Reveal>
+            <Portfolio />
+          </Reveal>
+          <Reveal>
+            <Contato data={data} />
+          </Reveal>
+        </main>
+        <Footer data={data} />
+      </div>
+    </>
+  );
 }
